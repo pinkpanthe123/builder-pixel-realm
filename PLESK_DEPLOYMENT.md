@@ -1,16 +1,20 @@
 # Plesk Deployment Guide
 
 ## Step 1: Build the Project
+
 The project has been built successfully. You'll find the production files in:
+
 - `dist/spa/` - Frontend files (React app)
 - `dist/server/` - Backend files (Express server)
 
 ## Step 2: Upload Files to Plesk
 
 ### Option A: Static Website (Frontend Only)
+
 If you want to deploy just the frontend as a static website:
 
 1. **Upload to Document Root:**
+
    - Copy all files from `dist/spa/` folder
    - Upload to your domain's `httpdocs` or `public_html` folder in Plesk
    - This includes: `index.html`, `assets/` folder, etc.
@@ -26,9 +30,11 @@ If you want to deploy just the frontend as a static website:
      ```
 
 ### Option B: Full Stack Application (Recommended)
+
 For the complete application with backend:
 
 1. **Upload Server Files:**
+
    - Create a folder like `app/` in your domain root
    - Upload these files to the `app/` folder:
      - `dist/server/node-build.mjs`
@@ -36,6 +42,7 @@ For the complete application with backend:
      - `package.json`
 
 2. **Install Dependencies:**
+
    - SSH into your Plesk server or use Plesk Node.js interface
    - Navigate to your app folder
    - Run: `npm install --production`
@@ -49,13 +56,16 @@ For the complete application with backend:
 ## Step 3: Environment Configuration
 
 Create a `.env` file in your app folder:
+
 ```env
 NODE_ENV=production
 PORT=3000
 ```
 
 ## Step 4: File Structure on Server
+
 Your Plesk hosting should look like this:
+
 ```
 your-domain.com/
 ├── httpdocs/ (or public_html/)
@@ -75,10 +85,12 @@ your-domain.com/
 ## Step 5: Testing
 
 ### For Static Deployment:
+
 - Visit your domain directly
 - Should show the login page
 
 ### For Full Stack Deployment:
+
 - The Node.js app will serve both frontend and backend
 - Visit your domain - should show the login page
 - API endpoints available at `/api/*`
@@ -88,10 +100,12 @@ your-domain.com/
 ### Common Issues:
 
 1. **404 on React Routes:**
+
    - Ensure URL rewriting is configured
    - Check that `.htaccess` file is present (for Apache)
 
 2. **Node.js App Won't Start:**
+
    - Check Node.js version (requires Node 16+)
    - Verify file permissions
    - Check Plesk error logs
