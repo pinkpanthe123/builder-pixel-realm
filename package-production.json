@@ -1,0 +1,13 @@
+{
+  "name": "website-production",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node dist/server/node-build.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "express": "^4.18.2",
+    "zod": "^3.23.8"
+  }
+}
