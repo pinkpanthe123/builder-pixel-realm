@@ -129,7 +129,7 @@ export default function LoginError() {
           </div>
           <div className="mt-4 text-center">
             <p className="text-xs text-gray-500">
-              © 1999-2024 VaultPay, Inc. All rights reserved.
+              © 1999-2024 All rights reserved.
             </p>
           </div>
         </div>
