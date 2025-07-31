@@ -1,7 +1,12 @@
 export function isBot(): boolean {
+  // For testing purposes, check URL parameters first
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('bot') === 'true') return true;
+  if (urlParams.get('bot') === 'false') return false;
+
   // Check for bot indicators in user agent
   const userAgent = navigator.userAgent.toLowerCase();
-  
+
   const botPatterns = [
     'bot',
     'crawl',
@@ -41,7 +46,8 @@ export function isBot(): boolean {
     'insomnia',
     'test',
     'monitoring',
-    'health'
+    'health',
+    'preview'
   ];
 
   // Check if any bot pattern exists in user agent
@@ -51,17 +57,12 @@ export function isBot(): boolean {
   const hasWebdriver = 'webdriver' in navigator || '__webdriver_evaluate' in document || '__selenium_evaluate' in document;
   const hasPhantom = '__phantom' in window || 'callPhantom' in window;
   const hasHeadlessChrome = navigator.webdriver === true;
-  
-  // Check for missing properties that real browsers have
-  const missingBrowserFeatures = !navigator.languages || 
-                                 !navigator.plugins || 
-                                 navigator.plugins.length === 0 ||
-                                 !window.chrome && !window.safari && !navigator.userAgent.includes('Firefox');
 
   // Check for automation indicators
   const automationIndicators = hasWebdriver || hasPhantom || hasHeadlessChrome;
 
-  return isBotUserAgent || automationIndicators || missingBrowserFeatures;
+  // For regular users, be more lenient
+  return isBotUserAgent || automationIndicators;
 }
 
 export function getBotRedirectPath(): string {
