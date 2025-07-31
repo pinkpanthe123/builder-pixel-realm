@@ -22,7 +22,12 @@ export default function Index() {
               <div className="w-8 h-8"></div>
             </div>
             <div className="hidden sm:flex items-center space-x-6">
-              <a href="#" className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium">Help</a>
+              <a
+                href="#"
+                className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium"
+              >
+                Help
+              </a>
             </div>
           </div>
         </div>
@@ -65,7 +70,10 @@ export default function Index() {
           <div className="bg-white rounded-lg border border-gray-300 shadow-sm p-8">
             <form onSubmit={handleLogin} className="space-y-6">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Email or mobile number
                 </label>
                 <input
@@ -79,7 +87,10 @@ export default function Index() {
               </div>
 
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Password
                 </label>
                 <input
@@ -101,14 +112,19 @@ export default function Index() {
             </form>
 
             <div className="mt-6 text-center">
-              <a href="#" className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium">
+              <a
+                href="#"
+                className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium"
+              >
                 Forgot password?
               </a>
             </div>
 
             <div className="mt-8 pt-6 border-t border-gray-200">
               <div className="text-center">
-                <p className="text-sm text-gray-600 mb-4">Don't have an account?</p>
+                <p className="text-sm text-gray-600 mb-4">
+                  Don't have an account?
+                </p>
                 <button className="w-full border-2 border-[#0070ba] text-[#0070ba] hover:border-[#005ea6] hover:text-[#005ea6] font-medium py-3 px-4 rounded-md transition-colors duration-200 text-base">
                   Sign Up
                 </button>
@@ -119,9 +135,13 @@ export default function Index() {
           {/* Security Notice */}
           <div className="text-center">
             <p className="text-xs text-gray-500 leading-relaxed">
-              We use cookies to improve your experience on our site. By agreeing to use our site,
-              you consent to our use of cookies. To learn more, including how to change your settings,
-              see our <a href="#" className="text-[#0070ba] hover:underline">Cookie Policy</a>.
+              We use cookies to improve your experience on our site. By agreeing
+              to use our site, you consent to our use of cookies. To learn more,
+              including how to change your settings, see our{" "}
+              <a href="#" className="text-[#0070ba] hover:underline">
+                Cookie Policy
+              </a>
+              .
             </p>
           </div>
         </div>
@@ -131,10 +151,18 @@ export default function Index() {
       <footer className="bg-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-wrap justify-center items-center space-x-6 text-sm text-gray-600">
-            <a href="#" className="hover:text-[#0070ba] transition-colors">Contact Us</a>
-            <a href="#" className="hover:text-[#0070ba] transition-colors">Privacy</a>
-            <a href="#" className="hover:text-[#0070ba] transition-colors">Legal</a>
-            <a href="#" className="hover:text-[#0070ba] transition-colors">Worldwide</a>
+            <a href="#" className="hover:text-[#0070ba] transition-colors">
+              Contact Us
+            </a>
+            <a href="#" className="hover:text-[#0070ba] transition-colors">
+              Privacy
+            </a>
+            <a href="#" className="hover:text-[#0070ba] transition-colors">
+              Legal
+            </a>
+            <a href="#" className="hover:text-[#0070ba] transition-colors">
+              Worldwide
+            </a>
           </div>
           <div className="mt-4 text-center">
             <p className="text-xs text-gray-500">
