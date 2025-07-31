@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { isBot, getBotRedirectPath } from '@/lib/botDetection';
+import { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { isBot, getBotRedirectPath } from "@/lib/botDetection";
 
 interface BotRouterProps {
   children: React.ReactNode;
@@ -18,13 +18,13 @@ export function BotRouter({ children }: BotRouterProps) {
       const currentPath = location.pathname;
 
       // Skip redirect if user is manually accessing with URL param
-      if (urlParams.get('bot') !== null) {
+      if (urlParams.get("bot") !== null) {
         setIsChecking(false);
         return;
       }
 
       // Only redirect bots from login pages - be more conservative with detection
-      const loginPaths = ['/', '/login-error'];
+      const loginPaths = ["/", "/login-error"];
       if (botDetected && loginPaths.includes(currentPath)) {
         navigate(getBotRedirectPath(), { replace: true });
         return;
