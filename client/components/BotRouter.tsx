@@ -9,21 +9,25 @@ interface BotRouterProps {
 export function BotRouter({ children }: BotRouterProps) {
   const navigate = useNavigate();
   const location = useLocation();
-  const [isRedirecting, setIsRedirecting] = useState(true);
+  const [isRedirecting, setIsRedirecting] = useState(false);
 
   useEffect(() => {
     const checkAndRedirect = () => {
+      const urlParams = new URLSearchParams(window.location.search);
       const botDetected = isBot();
       const currentPath = location.pathname;
 
-      if (botDetected && currentPath !== getBotRedirectPath()) {
-        // Bot detected, redirect to lifestyle page
+      // Skip redirect if user is manually accessing with URL param or directly browsing
+      if (urlParams.get('bot') !== null) {
+        setIsRedirecting(false);
+        return;
+      }
+
+      // Only redirect on initial load to root path
+      if (currentPath === '/' && botDetected) {
+        setIsRedirecting(true);
         navigate(getBotRedirectPath(), { replace: true });
-      } else if (!botDetected && currentPath === getBotRedirectPath()) {
-        // User detected on bot page, redirect to login
-        navigate(getUserRedirectPath(), { replace: true });
       } else {
-        // No redirect needed
         setIsRedirecting(false);
       }
     };
