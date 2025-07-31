@@ -9,7 +9,7 @@ interface BotRouterProps {
 export function BotRouter({ children }: BotRouterProps) {
   const navigate = useNavigate();
   const location = useLocation();
-  const [isRedirecting, setIsRedirecting] = useState(false);
+  const [isChecking, setIsChecking] = useState(true);
 
   useEffect(() => {
     const checkAndRedirect = () => {
@@ -19,53 +19,34 @@ export function BotRouter({ children }: BotRouterProps) {
 
       // Skip redirect if user is manually accessing with URL param
       if (urlParams.get('bot') !== null) {
-        setIsRedirecting(false);
+        setIsChecking(false);
         return;
       }
 
-      // Block bots from accessing login pages and redirect them
+      // Only redirect bots from login pages - be more conservative with detection
       const loginPaths = ['/', '/login-error'];
       if (botDetected && loginPaths.includes(currentPath)) {
-        setIsRedirecting(true);
         navigate(getBotRedirectPath(), { replace: true });
         return;
       }
 
-      setIsRedirecting(false);
+      setIsChecking(false);
     };
 
     // Small delay to ensure proper detection
     const timer = setTimeout(() => {
       checkAndRedirect();
-    }, 100);
+    }, 50);
 
     return () => clearTimeout(timer);
   }, [navigate, location.pathname]);
 
-  // Block bots from seeing login page content
-  const botDetected = isBot();
-  const currentPath = location.pathname;
-  const loginPaths = ['/', '/login-error'];
-  const urlParams = new URLSearchParams(window.location.search);
-
-  if (botDetected && loginPaths.includes(currentPath) && urlParams.get('bot') === null) {
+  // Show loading only during initial check
+  if (isChecking) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
-          <div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600">Redirecting...</p>
-        </div>
-      </div>
-    );
-  }
-
-  // Show loading during redirect
-  if (isRedirecting) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-white">
-        <div className="text-center">
-          <div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading...</p>
+          <div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
         </div>
       </div>
     );
