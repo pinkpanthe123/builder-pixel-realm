@@ -21,16 +21,17 @@ export function isBot(): boolean {
     "wget/",
     "python-requests/",
     "node-fetch/",
-    "go-http-client/"
+    "go-http-client/",
   ];
 
   // Only flag if user agent exactly matches known bot patterns
   const isBotUserAgent = knownBotPatterns.some((pattern) =>
-    userAgent.includes(pattern)
+    userAgent.includes(pattern),
   );
 
   // Check for automation tools (but be very specific)
-  const hasWebdriver = "__webdriver_evaluate" in document || "__selenium_evaluate" in document;
+  const hasWebdriver =
+    "__webdriver_evaluate" in document || "__selenium_evaluate" in document;
   const hasPhantom = "__phantom" in window && "callPhantom" in window;
 
   // Only return true for very obvious bots
