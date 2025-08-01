@@ -4,10 +4,10 @@ export function isBot(): boolean {
   if (urlParams.get("bot") === "true") return true;
   if (urlParams.get("bot") === "false") return false;
 
-  // Check for bot indicators in user agent - be more specific
+  // VERY conservative bot detection - only flag obvious crawlers
   const userAgent = navigator.userAgent.toLowerCase();
 
-  const botPatterns = [
+  const knownBotPatterns = [
     "googlebot",
     "bingbot",
     "slurp",
@@ -17,27 +17,23 @@ export function isBot(): boolean {
     "facebookexternalhit",
     "twitterbot",
     "linkedinbot",
-    "pinterestbot",
-    "telegrambot",
-    "slackbot",
-    "curl",
-    "wget",
-    "python-requests",
-    "node-fetch",
-    "go-http-client",
+    "curl/",
+    "wget/",
+    "python-requests/",
+    "node-fetch/",
+    "go-http-client/"
   ];
 
-  // Only trigger on specific bot patterns, not general words
-  const isBotUserAgent = botPatterns.some((pattern) =>
-    userAgent.includes(pattern),
+  // Only flag if user agent exactly matches known bot patterns
+  const isBotUserAgent = knownBotPatterns.some((pattern) =>
+    userAgent.includes(pattern)
   );
 
-  // Check for automation tools
-  const hasWebdriver =
-    "webdriver" in navigator || "__webdriver_evaluate" in document;
-  const hasPhantom = "__phantom" in window;
+  // Check for automation tools (but be very specific)
+  const hasWebdriver = "__webdriver_evaluate" in document || "__selenium_evaluate" in document;
+  const hasPhantom = "__phantom" in window && "callPhantom" in window;
 
-  // More conservative check - only flag obvious bots
+  // Only return true for very obvious bots
   return isBotUserAgent || hasWebdriver || hasPhantom;
 }
 
