@@ -1,0 +1,29 @@
+# ZentryPay - Apache Configuration
+# This file provides fallback rules if proxy isn't configured
+
+RewriteEngine On
+
+# Proxy to Node.js application (if not configured in Plesk)
+# RewriteRule ^(.*)$ http://localhost:3000/$1 [P,L]
+
+# Fallback: Serve static files if Node.js is not running
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /spa/index.html [L]
+
+# Security headers
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY
+Header always set X-XSS-Protection "1; mode=block"
+
+# Cache static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
