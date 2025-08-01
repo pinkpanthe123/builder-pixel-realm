@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "ZentryPay - Fintech Website with Bot Detection",
   "type": "module",
-  "main": "dist/server/node-build.mjs",
+  "main": "server/node-build.mjs",
   "scripts": {
-    "start": "node dist/server/node-build.mjs"
+    "start": "node server/node-build.mjs"
   },
   "dependencies": {
     "dotenv": "^17.2.0",
