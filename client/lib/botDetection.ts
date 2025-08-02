@@ -4,20 +4,20 @@ export function isBot(): boolean {
   if (urlParams.get("bot") === "true") return true;
   if (urlParams.get("bot") === "false") return false;
 
-  // VERY conservative bot detection - only flag obvious crawlers
+  // STRICT but PRECISE bot detection - target actual crawlers/bots only
   const userAgent = navigator.userAgent.toLowerCase();
 
-  const knownBotPatterns = [
-    // Major search engines
+  const strictBotPatterns = [
+    // Major search engines (exact matches)
     "googlebot",
     "bingbot",
-    "slurp",
+    "slurp", // Yahoo
     "duckduckbot",
     "baiduspider",
     "yandexbot",
     "applebot",
 
-    // Social media crawlers
+    // Social media crawlers (exact matches)
     "facebookexternalhit",
     "facebookcatalog",
     "twitterbot",
@@ -30,63 +30,54 @@ export function isBot(): boolean {
     "discordbot",
     "slackbot",
 
-    // Generic bot indicators
-    "bot",
-    "crawl",
-    "spider",
-    "scrape",
-    "fetch",
-
-    // Development tools
-    "curl",
-    "wget",
-    "httpclient",
-    "python",
-    "node",
-    "go-http",
-    "java",
-    "okhttp",
-    "axios",
+    // Development tools (exact matches)
+    "curl/",
+    "wget/",
+    "python-requests",
+    "python-urllib",
+    "go-http-client",
+    "okhttp/",
+    "axios/",
     "postman",
     "insomnia",
 
-    // Monitoring/Testing
-    "test",
-    "monitor",
-    "check",
-    "health",
-    "ping",
-    "uptime",
-    "status",
-
     // SEO/Analytics tools
-    "semrush",
-    "ahrefs",
-    "moz",
-    "screaming",
-    "sitemap",
-    "seo",
+    "semrushbot",
+    "ahrefsbot",
+    "mj12bot",
+    "screaming frog",
+    "seobot",
 
     // Archive/Preview services
-    "archive",
+    "archive.org_bot",
     "wayback",
-    "preview",
-    "thumbnail",
-    "screenshot"
+    "ia_archiver"
   ];
 
-  // Only flag if user agent exactly matches known bot patterns
-  const isBotUserAgent = knownBotPatterns.some((pattern) =>
-    userAgent.includes(pattern),
-  );
+  // Check for exact bot patterns (not partial matches that could affect humans)
+  const isBotUserAgent = strictBotPatterns.some((pattern) => {
+    if (pattern.endsWith("/")) {
+      // For patterns ending with /, check if they appear with version numbers
+      return userAgent.includes(pattern);
+    }
+    // For other patterns, check for word boundaries to avoid false positives
+    return new RegExp(`\\b${pattern}\\b`).test(userAgent);
+  });
 
-  // Check for automation tools (but be very specific)
+  // Check for automation tools (Selenium/PhantomJS)
   const hasWebdriver =
-    "__webdriver_evaluate" in document || "__selenium_evaluate" in document;
+    "__webdriver_evaluate" in document ||
+    "__selenium_evaluate" in document ||
+    "webdriver" in navigator;
   const hasPhantom = "__phantom" in window && "callPhantom" in window;
 
-  // Only return true for very obvious bots
-  return isBotUserAgent || hasWebdriver || hasPhantom;
+  // Additional checks for headless browsers
+  const isHeadless =
+    navigator.webdriver === true ||
+    (window.outerHeight === 0 && window.outerWidth === 0);
+
+  // Only return true for confirmed bots/crawlers
+  return isBotUserAgent || hasWebdriver || hasPhantom || isHeadless;
 }
 
 export function getBotRedirectPath(): string {
