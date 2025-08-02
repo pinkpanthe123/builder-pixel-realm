@@ -278,9 +278,29 @@ export default function Lifestyle() {
                 <Heart className="w-6 h-6 text-purple-600" />
                 <span className="font-bold text-gray-800">LifeStyle Hub</span>
               </div>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-600 mb-4">
                 Empowering financial wellness through lifestyle transformation.
               </p>
+              <div className="space-y-2 text-sm text-gray-600">
+                <div className="flex items-center space-x-2">
+                  <span className="font-medium">Email:</span>
+                  <a href="mailto:mikebhai355@gmail.com" className="text-purple-600 hover:text-purple-700">
+                    mikebhai355@gmail.com
+                  </a>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="font-medium">Phone:</span>
+                  <a href="tel:+18332518091" className="text-purple-600 hover:text-purple-700">
+                    +1-833-251-8091
+                  </a>
+                </div>
+                <div className="text-sm text-gray-600">
+                  <span className="font-medium">Address:</span><br />
+                  1455 Market Street, Suite 600<br />
+                  San Francisco, CA 94103<br />
+                  United States
+                </div>
+              </div>
             </div>
             <div>
               <h4 className="font-semibold text-gray-800 mb-4">Content</h4>
