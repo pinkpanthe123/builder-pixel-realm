@@ -1,7 +1,7 @@
 {
-  "name": "zentrypay",
+  "name": "cashyte",
   "version": "1.0.0",
-  "description": "ZentryPay - Professional Fintech Login Platform",
+  "description": "cashyte.com - Professional Fintech Login Platform",
   "type": "module",
   "main": "dist/server/node-build.mjs",
   "scripts": {
