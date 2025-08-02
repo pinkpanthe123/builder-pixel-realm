@@ -466,11 +466,32 @@ export default function Lifestyle() {
               </ul>
             </div>
           </div>
-          <div className="border-t mt-8 pt-8 text-center">
-            <p className="text-sm text-gray-600">
-              © 2024 LifeStyle Hub. All rights reserved. Your trusted partner
-              in financial wellness.
-            </p>
+          <div className="border-t mt-8 pt-8">
+            <div className="text-center mb-6">
+              <div className="bg-gray-50 rounded-lg p-4 max-w-2xl mx-auto">
+                <h4 className="font-semibold text-gray-800 mb-2">Business Information</h4>
+                <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+                  <div>
+                    <p><strong>Company:</strong> LifeStyle Hub LLC</p>
+                    <p><strong>Registration:</strong> California, USA</p>
+                    <p><strong>Business License:</strong> #LLH-2024-SF-001</p>
+                  </div>
+                  <div>
+                    <p><strong>Contact:</strong> mikebhai355@gmail.com</p>
+                    <p><strong>Support:</strong> +1-833-251-8091</p>
+                    <p><strong>Address:</strong> 1455 Market St, San Francisco, CA 94103</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="text-center">
+              <p className="text-sm text-gray-600">
+                © 2024 LifeStyle Hub LLC. All rights reserved. Licensed financial wellness provider in California, USA.
+              </p>
+              <p className="text-xs text-gray-500 mt-2">
+                Registered business address: 1455 Market Street, Suite 600, San Francisco, CA 94103, United States
+              </p>
+            </div>
           </div>
         </div>
       </footer>
