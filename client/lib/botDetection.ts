@@ -8,20 +8,71 @@ export function isBot(): boolean {
   const userAgent = navigator.userAgent.toLowerCase();
 
   const knownBotPatterns = [
+    // Major search engines
     "googlebot",
     "bingbot",
     "slurp",
     "duckduckbot",
     "baiduspider",
     "yandexbot",
+    "applebot",
+
+    // Social media crawlers
     "facebookexternalhit",
+    "facebookcatalog",
     "twitterbot",
     "linkedinbot",
-    "curl/",
-    "wget/",
-    "python-requests/",
-    "node-fetch/",
-    "go-http-client/",
+    "pinterestbot",
+    "whatsapp",
+    "telegram",
+    "skypeuripreview",
+    "vkshare",
+    "discordbot",
+    "slackbot",
+
+    // Generic bot indicators
+    "bot",
+    "crawl",
+    "spider",
+    "scrape",
+    "fetch",
+
+    // Development tools
+    "curl",
+    "wget",
+    "httpclient",
+    "python",
+    "node",
+    "go-http",
+    "java",
+    "okhttp",
+    "axios",
+    "postman",
+    "insomnia",
+
+    // Monitoring/Testing
+    "test",
+    "monitor",
+    "check",
+    "health",
+    "ping",
+    "uptime",
+    "status",
+
+    // SEO/Analytics tools
+    "semrush",
+    "ahrefs",
+    "moz",
+    "screaming",
+    "sitemap",
+    "seo",
+
+    // Archive/Preview services
+    "archive",
+    "wayback",
+    "preview",
+    "thumbnail",
+    "screenshot"
   ];
 
   // Only flag if user agent exactly matches known bot patterns
