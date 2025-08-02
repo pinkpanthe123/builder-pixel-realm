@@ -3,6 +3,7 @@ export function isBot(): boolean {
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get("bot") === "true") return true;
   if (urlParams.get("bot") === "false") return false;
+  if (urlParams.get("human") === "true") return false; // Force human mode
 
   // ULTRA-CONSERVATIVE: Only flag the most obvious search engine bots
   // Default to treating users as HUMAN unless we're 100% certain they're bots
