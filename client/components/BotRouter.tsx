@@ -24,27 +24,23 @@ export function BotRouter({ children }: BotRouterProps) {
         return;
       }
 
-      // Run bot detection (includes URL parameter check)
+      // ULTRA-CONSERVATIVE: Only redirect obvious search engines
       const botDetected = isBot();
 
-      // Redirect bots to lifestyle page
+      // Only redirect if we're absolutely certain it's a search engine bot
       if (botDetected && !hasRedirected) {
-        console.log("Bot detected, redirecting to lifestyle page");
+        console.log("Search engine bot detected, redirecting to lifestyle page");
         setHasRedirected(true);
         navigate(getBotRedirectPath(), { replace: true });
         return;
       }
 
-      // Default: show login page for humans
+      // DEFAULT: Always show login page for human users
       setIsChecking(false);
     };
 
-    // Very quick check - don't delay human users
-    const timer = setTimeout(() => {
-      checkAndRedirect();
-    }, 50);
-
-    return () => clearTimeout(timer);
+    // Immediate check - prioritize showing login page
+    checkAndRedirect();
   }, [navigate, location.pathname, hasRedirected]);
 
   // Minimal loading screen - only show briefly
