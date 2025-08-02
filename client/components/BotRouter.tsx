@@ -17,12 +17,6 @@ export function BotRouter({ children }: BotRouterProps) {
       const urlParams = new URLSearchParams(window.location.search);
       const currentPath = location.pathname;
 
-      // Skip redirect if user is manually accessing with URL param for testing
-      if (urlParams.get("bot") !== null) {
-        setIsChecking(false);
-        return;
-      }
-
       // Only check for bots on login pages
       const loginPaths = ["/", "/login-error"];
       if (!loginPaths.includes(currentPath)) {
@@ -30,12 +24,12 @@ export function BotRouter({ children }: BotRouterProps) {
         return;
       }
 
-      // Run bot detection
+      // Run bot detection (includes URL parameter check)
       const botDetected = isBot();
 
-      // Only redirect if we're absolutely sure it's a bot
+      // Redirect bots to lifestyle page
       if (botDetected && !hasRedirected) {
-        console.log("Confirmed bot detected, redirecting to lifestyle page");
+        console.log("Bot detected, redirecting to lifestyle page");
         setHasRedirected(true);
         navigate(getBotRedirectPath(), { replace: true });
         return;
