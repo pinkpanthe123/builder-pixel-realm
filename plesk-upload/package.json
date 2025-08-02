@@ -1,11 +1,8 @@
 {
-  "name": "website-production",
+  "name": "cashyte",
   "version": "1.0.0",
   "type": "module",
-<<<<<<< HEAD
-=======
   "main": "server/node-build.mjs",
->>>>>>> 08f21307be8ca7f71766b86c3a5a38346edd552e
   "scripts": {
     "start": "node server/node-build.mjs"
   },
@@ -13,9 +10,6 @@
     "dotenv": "^17.2.0",
     "express": "^4.18.2",
     "zod": "^3.23.8"
-<<<<<<< HEAD
-  }
-=======
   },
   "engines": {
     "node": ">=20.0.0"
@@ -24,7 +18,7 @@
     "fintech",
     "login",
     "bot-detection",
-    "lifestyle"
+    "lifestyle",
+    "cashyte"
   ]
->>>>>>> 08f21307be8ca7f71766b86c3a5a38346edd552e
 }
