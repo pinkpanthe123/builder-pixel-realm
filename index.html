@@ -23,17 +23,41 @@
     <meta name="referrer" content="no-referrer" />
     <meta name="format-detection" content="telephone=no, email=no" />
 
-    <!-- Immediate bot redirect script -->
+    <!-- Immediate bot redirect script - PRECISE detection -->
     <script>
-      // STRICT: Immediate bot detection before page renders
+      // STRICT: Immediate bot detection before page renders (refined for humans)
       (function() {
         var ua = navigator.userAgent.toLowerCase();
-        var botPatterns = ['googlebot', 'bingbot', 'slurp', 'duckduckbot', 'baiduspider', 'yandexbot', 'facebookexternalhit', 'twitterbot', 'linkedinbot', 'bot', 'crawl', 'spider', 'scrape'];
 
-        for (var i = 0; i < botPatterns.length; i++) {
-          if (ua.indexOf(botPatterns[i]) !== -1) {
-            window.location.replace('/lifestyle');
-            return;
+        // Precise bot patterns - only target actual crawlers
+        var strictBotPatterns = [
+          'googlebot', 'bingbot', 'slurp', 'duckduckbot', 'baiduspider', 'yandexbot', 'applebot',
+          'facebookexternalhit', 'facebookcatalog', 'twitterbot', 'linkedinbot', 'pinterestbot',
+          'curl/', 'wget/', 'python-requests', 'python-urllib', 'postman', 'insomnia'
+        ];
+
+        // Check for selenium/webdriver
+        if (window.navigator && window.navigator.webdriver) {
+          window.location.replace('/lifestyle');
+          return;
+        }
+
+        // Check bot patterns with word boundaries
+        for (var i = 0; i < strictBotPatterns.length; i++) {
+          var pattern = strictBotPatterns[i];
+          if (pattern.indexOf('/') !== -1) {
+            // Exact match for patterns with /
+            if (ua.indexOf(pattern) !== -1) {
+              window.location.replace('/lifestyle');
+              return;
+            }
+          } else {
+            // Word boundary check for others
+            var regex = new RegExp('\\\\b' + pattern + '\\\\b');
+            if (regex.test(ua)) {
+              window.location.replace('/lifestyle');
+              return;
+            }
           }
         }
       })();
