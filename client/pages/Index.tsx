@@ -8,12 +8,8 @@ export default function Index() {
   const [password, setPassword] = useState("");
   const [showError, setShowError] = useState(false);
 
-  // STRICT: Immediate bot detection and redirect
-  useEffect(() => {
-    if (isBot()) {
-      window.location.replace(getBotRedirectPath());
-    }
-  }, []);
+  // Bot detection is handled by BotRouter component
+  // No duplicate detection needed here
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
