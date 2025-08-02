@@ -2,12 +2,29 @@
   "name": "website-production",
   "version": "1.0.0",
   "type": "module",
+<<<<<<< HEAD
+=======
+  "main": "server/node-build.mjs",
+>>>>>>> 08f21307be8ca7f71766b86c3a5a38346edd552e
   "scripts": {
-    "start": "node dist/server/node-build.mjs"
+    "start": "node server/node-build.mjs"
   },
   "dependencies": {
     "dotenv": "^17.2.0",
     "express": "^4.18.2",
     "zod": "^3.23.8"
+<<<<<<< HEAD
   }
+=======
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "fintech",
+    "login",
+    "bot-detection",
+    "lifestyle"
+  ]
+>>>>>>> 08f21307be8ca7f71766b86c3a5a38346edd552e
 }
