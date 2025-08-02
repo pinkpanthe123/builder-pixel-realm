@@ -29,7 +29,9 @@ export function BotRouter({ children }: BotRouterProps) {
 
       // Only redirect if we're absolutely certain it's a search engine bot
       if (botDetected && !hasRedirected) {
-        console.log("Search engine bot detected, redirecting to lifestyle page");
+        console.log(
+          "Search engine bot detected, redirecting to lifestyle page",
+        );
         setHasRedirected(true);
         navigate(getBotRedirectPath(), { replace: true });
         return;

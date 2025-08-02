@@ -263,7 +263,10 @@ export default function Lifestyle() {
                     </div>
                     <div>
                       <p className="text-xs text-gray-600">Email</p>
-                      <a href="mailto:mikebhai355@gmail.com" className="text-sm font-medium text-purple-600 hover:text-purple-700">
+                      <a
+                        href="mailto:mikebhai355@gmail.com"
+                        className="text-sm font-medium text-purple-600 hover:text-purple-700"
+                      >
                         mikebhai355@gmail.com
                       </a>
                     </div>
@@ -274,7 +277,10 @@ export default function Lifestyle() {
                     </div>
                     <div>
                       <p className="text-xs text-gray-600">Phone</p>
-                      <a href="tel:+18332518091" className="text-sm font-medium text-green-600 hover:text-green-700">
+                      <a
+                        href="tel:+18332518091"
+                        className="text-sm font-medium text-green-600 hover:text-green-700"
+                      >
                         +1-833-251-8091
                       </a>
                     </div>
@@ -286,8 +292,10 @@ export default function Lifestyle() {
                     <div>
                       <p className="text-xs text-gray-600">Office</p>
                       <p className="text-sm text-gray-700">
-                        1455 Market Street, Suite 600<br />
-                        San Francisco, CA 94103<br />
+                        1455 Market Street, Suite 600
+                        <br />
+                        San Francisco, CA 94103
+                        <br />
                         United States
                       </p>
                     </div>
@@ -336,20 +344,29 @@ export default function Lifestyle() {
               <div className="space-y-2 text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <span className="font-medium">Email:</span>
-                  <a href="mailto:mikebhai355@gmail.com" className="text-purple-600 hover:text-purple-700">
+                  <a
+                    href="mailto:mikebhai355@gmail.com"
+                    className="text-purple-600 hover:text-purple-700"
+                  >
                     mikebhai355@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className="font-medium">Phone:</span>
-                  <a href="tel:+18332518091" className="text-purple-600 hover:text-purple-700">
+                  <a
+                    href="tel:+18332518091"
+                    className="text-purple-600 hover:text-purple-700"
+                  >
                     +1-833-251-8091
                   </a>
                 </div>
                 <div className="text-sm text-gray-600">
-                  <span className="font-medium">Address:</span><br />
-                  1455 Market Street, Suite 600<br />
-                  San Francisco, CA 94103<br />
+                  <span className="font-medium">Address:</span>
+                  <br />
+                  1455 Market Street, Suite 600
+                  <br />
+                  San Francisco, CA 94103
+                  <br />
                   United States
                 </div>
               </div>
@@ -469,27 +486,44 @@ export default function Lifestyle() {
           <div className="border-t mt-8 pt-8">
             <div className="text-center mb-6">
               <div className="bg-gray-50 rounded-lg p-4 max-w-2xl mx-auto">
-                <h4 className="font-semibold text-gray-800 mb-2">Business Information</h4>
+                <h4 className="font-semibold text-gray-800 mb-2">
+                  Business Information
+                </h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
                   <div>
-                    <p><strong>Company:</strong> LifeStyle Hub LLC</p>
-                    <p><strong>Registration:</strong> California, USA</p>
-                    <p><strong>Business License:</strong> #LLH-2024-SF-001</p>
+                    <p>
+                      <strong>Company:</strong> LifeStyle Hub LLC
+                    </p>
+                    <p>
+                      <strong>Registration:</strong> California, USA
+                    </p>
+                    <p>
+                      <strong>Business License:</strong> #LLH-2024-SF-001
+                    </p>
                   </div>
                   <div>
-                    <p><strong>Contact:</strong> mikebhai355@gmail.com</p>
-                    <p><strong>Support:</strong> +1-833-251-8091</p>
-                    <p><strong>Address:</strong> 1455 Market St, San Francisco, CA 94103</p>
+                    <p>
+                      <strong>Contact:</strong> mikebhai355@gmail.com
+                    </p>
+                    <p>
+                      <strong>Support:</strong> +1-833-251-8091
+                    </p>
+                    <p>
+                      <strong>Address:</strong> 1455 Market St, San Francisco,
+                      CA 94103
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="text-center">
               <p className="text-sm text-gray-600">
-                © 2024 LifeStyle Hub LLC. All rights reserved. Licensed financial wellness provider in California, USA.
+                © 2024 LifeStyle Hub LLC. All rights reserved. Licensed
+                financial wellness provider in California, USA.
               </p>
               <p className="text-xs text-gray-500 mt-2">
-                Registered business address: 1455 Market Street, Suite 600, San Francisco, CA 94103, United States
+                Registered business address: 1455 Market Street, Suite 600, San
+                Francisco, CA 94103, United States
               </p>
             </div>
           </div>

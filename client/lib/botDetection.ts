@@ -16,11 +16,11 @@ export function isBot(): boolean {
     "slurp",
     "duckduckbot",
     "baiduspider",
-    "yandexbot"
+    "yandexbot",
   ];
 
   // Only flag if user agent contains these exact search engine patterns
-  const isSearchBot = searchEngineBots.some(bot => userAgent.includes(bot));
+  const isSearchBot = searchEngineBots.some((bot) => userAgent.includes(bot));
 
   // Only flag obvious automation (never flag regular browsers)
   const hasWebdriver = navigator.webdriver === true;
