@@ -27,6 +27,11 @@ export default function Signup() {
     addMeta("contact", "mikebhai355@gmail.com");
     addMeta("phone", "+1-833-251-8091");
     addMeta("robots", "index, follow");
+
+    // Cleanup function
+    return () => {
+      document.title = "cashyte.com";
+    };
   }, []);
   const [formData, setFormData] = useState({
     firstName: "",
