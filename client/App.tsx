@@ -44,7 +44,13 @@ const App = () => (
 
 // Fix for React createRoot being called multiple times during HMR
 const rootElement = document.getElementById("root")!;
-if (!rootElement._reactRootContainer) {
-  rootElement._reactRootContainer = createRoot(rootElement);
+
+// Check if root already exists to prevent double mounting
+const existingRoot = (rootElement as any).__reactRoot;
+if (existingRoot) {
+  existingRoot.render(<App />);
+} else {
+  const root = createRoot(rootElement);
+  (rootElement as any).__reactRoot = root;
+  root.render(<App />);
 }
-rootElement._reactRootContainer.render(<App />);
