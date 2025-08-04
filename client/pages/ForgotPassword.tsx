@@ -1,6 +1,26 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function ForgotPassword() {
+  // Add Google Ads compliant meta tags
+  React.useEffect(() => {
+    document.title = "Password Reset - cashyte.com Support";
+
+    const addMeta = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    addMeta('description', 'Reset your cashyte.com password securely. Get help accessing your financial services account with 24/7 support.');
+    addMeta('keywords', 'password reset, forgot password, account recovery, financial services support');
+    addMeta('contact', 'mikebhai355@gmail.com');
+    addMeta('phone', '+1-833-251-8091');
+    addMeta('robots', 'index, follow');
+  }, []);
   const [email, setEmail] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
 
