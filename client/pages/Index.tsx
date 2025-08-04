@@ -141,22 +141,24 @@ export default function Index() {
               </form>
 
               <div className="mt-6 text-center">
-                <a
-                  href="#"
-                  className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium"
-                >
-                  Forgot password?
-                </a>
-              </div>
+              <a
+                href="/forgot-password"
+                className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium"
+              >
+                Forgot password?
+              </a>
+            </div>
 
               <div className="mt-8 pt-6 border-t border-gray-200">
                 <div className="text-center">
                   <p className="text-sm text-gray-600 mb-4">
                     Don't have an account?
                   </p>
+                  <a href="/signup" className="block w-full">
                   <button className="w-full border-2 border-[#0070ba] text-[#0070ba] hover:border-[#005ea6] hover:text-[#005ea6] font-medium py-3 px-4 rounded-md transition-colors duration-200 text-base">
                     Sign Up
                   </button>
+                </a>
                 </div>
               </div>
             </div>
