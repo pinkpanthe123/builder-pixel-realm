@@ -182,24 +182,24 @@ export default function Index() {
         <footer className="bg-gray-50 border-t border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="flex flex-wrap justify-center items-center space-x-6 text-sm text-gray-600">
-              <a href="#" className="hover:text-[#0070ba] transition-colors">
-                Contact Us
-              </a>
-              <a href="#" className="hover:text-[#0070ba] transition-colors">
-                Privacy
-              </a>
-              <a href="#" className="hover:text-[#0070ba] transition-colors">
-                Legal
-              </a>
-              <a href="#" className="hover:text-[#0070ba] transition-colors">
-                Worldwide
-              </a>
-            </div>
-            <div className="mt-4 text-center">
-              <p className="text-xs text-gray-500">
-                © 1999-2024 All rights reserved.
-              </p>
-            </div>
+            <a href="#" className="hover:text-[#0070ba] transition-colors">
+              Contact Us
+            </a>
+            <a href="/privacy" className="hover:text-[#0070ba] transition-colors">
+              Privacy
+            </a>
+            <a href="/terms" className="hover:text-[#0070ba] transition-colors">
+              Terms
+            </a>
+            <a href="#" className="hover:text-[#0070ba] transition-colors">
+              Support
+            </a>
+          </div>
+          <div className="mt-4 text-center">
+            <p className="text-xs text-gray-500">
+              © 2024 cashyte.com. All rights reserved.
+            </p>
+          </div>
           </div>
         </footer>
       </div>
