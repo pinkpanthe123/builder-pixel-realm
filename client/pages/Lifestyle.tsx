@@ -14,10 +14,12 @@ import {
 export default function Lifestyle() {
   // Add meta tags for Google Ads compliance
   React.useEffect(() => {
+    const originalTitle = document.title;
     document.title = "cashyte.com - Financial Lifestyle & Wellness Hub";
 
     // Remove existing meta tags and add compliant ones
     const metaDescription = document.querySelector('meta[name="description"]');
+    const originalDescription = metaDescription?.getAttribute('content');
     if (metaDescription) {
       metaDescription.setAttribute(
         "content",
@@ -40,6 +42,14 @@ export default function Lifestyle() {
         "financial wellness, lifestyle, money management, budgeting, financial planning, investment tips";
       document.head.appendChild(meta);
     }
+
+    // Cleanup function
+    return () => {
+      document.title = originalTitle;
+      if (metaDescription && originalDescription) {
+        metaDescription.setAttribute('content', originalDescription);
+      }
+    };
   }, []);
   const articles = [
     {
