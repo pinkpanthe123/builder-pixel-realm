@@ -173,10 +173,48 @@ export default function Index() {
           </div>
         </main>
 
-        {/* Footer */}
-        <footer className="bg-gray-50 border-t border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="flex flex-wrap justify-center items-center space-x-6 text-sm text-gray-600">
+        {/* Business Information Section - Google Ads Compliance */}
+      <section className="bg-blue-50 border-t border-blue-100 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-6">
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Professional Financial Services</h3>
+            <p className="text-sm text-gray-600">Licensed financial platform serving customers with secure banking solutions</p>
+          </div>
+          <div className="bg-white rounded-lg shadow-sm p-6 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-700">
+              <div className="text-center">
+                <div className="font-semibold text-[#0070ba] mb-2">Contact Information</div>
+                <p><strong>Email:</strong> mikebhai355@gmail.com</p>
+                <p><strong>Phone:</strong> +1-833-251-8091</p>
+                <p><strong>Support Hours:</strong> 24/7</p>
+              </div>
+              <div className="text-center">
+                <div className="font-semibold text-[#0070ba] mb-2">Business Address</div>
+                <p>1455 Market Street, Suite 600</p>
+                <p>San Francisco, CA 94103</p>
+                <p>United States</p>
+              </div>
+              <div className="text-center">
+                <div className="font-semibold text-[#0070ba] mb-2">Services</div>
+                <p>Secure Digital Banking</p>
+                <p>Account Management</p>
+                <p>Financial Wellness</p>
+              </div>
+            </div>
+            <div className="mt-6 pt-4 border-t border-gray-200 text-center">
+              <p className="text-xs text-gray-600">
+                cashyte.com is a professional financial services platform committed to providing secure,
+                reliable banking solutions. Licensed and regulated financial service provider.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-50 border-t border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex flex-wrap justify-center items-center space-x-6 text-sm text-gray-600">
             <a href="#" className="hover:text-[#0070ba] transition-colors">
               Contact Us
             </a>
@@ -195,8 +233,8 @@ export default function Index() {
               © 2024 cashyte.com. All rights reserved.
             </p>
           </div>
-          </div>
-        </footer>
+        </div>
+      </footer>
       </div>
     </>
   );
