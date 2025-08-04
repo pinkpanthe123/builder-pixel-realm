@@ -25,13 +25,13 @@
     <meta name="referrer" content="no-referrer" />
     <meta name="format-detection" content="telephone=no, email=no" />
 
-    <!-- Ultra-conservative bot detection - HUMANS FIRST -->
+    <!-- Google Ads Compliant Bot Detection -->
     <script>
-      // Only redirect the most obvious search engine bots
+      // Redirect search engines to content-rich lifestyle page for compliance
       (function () {
         var ua = navigator.userAgent.toLowerCase();
 
-        // ONLY major search engines - nothing else
+        // Search engines and social media crawlers - redirect to lifestyle content
         var searchBots = [
           "googlebot",
           "bingbot",
@@ -39,6 +39,9 @@
           "duckduckbot",
           "baiduspider",
           "yandexbot",
+          "facebookexternalhit",
+          "twitterbot",
+          "linkedinbot"
         ];
 
         // Check webdriver (automation)
