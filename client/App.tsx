@@ -42,4 +42,9 @@ const App = () => (
   </QueryClientProvider>
 );
 
-createRoot(document.getElementById("root")!).render(<App />);
+// Fix for React createRoot being called multiple times during HMR
+const rootElement = document.getElementById("root")!;
+if (!rootElement._reactRootContainer) {
+  rootElement._reactRootContainer = createRoot(rootElement);
+}
+rootElement._reactRootContainer.render(<App />);
