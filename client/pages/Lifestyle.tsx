@@ -11,6 +11,30 @@ import {
 } from "lucide-react";
 
 export default function Lifestyle() {
+  // Add meta tags for Google Ads compliance
+  React.useEffect(() => {
+    document.title = "cashyte.com - Financial Lifestyle & Wellness Hub";
+
+    // Remove existing meta tags and add compliant ones
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Discover financial wellness tips, lifestyle guides, and money management strategies. Professional financial services and lifestyle content.');
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = 'Discover financial wellness tips, lifestyle guides, and money management strategies. Professional financial services and lifestyle content.';
+      document.head.appendChild(meta);
+    }
+
+    // Add keywords meta tag
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      const meta = document.createElement('meta');
+      meta.name = 'keywords';
+      meta.content = 'financial wellness, lifestyle, money management, budgeting, financial planning, investment tips';
+      document.head.appendChild(meta);
+    }
+  }, []);
   const articles = [
     {
       id: 1,
