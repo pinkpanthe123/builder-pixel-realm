@@ -19,20 +19,25 @@ export default function Lifestyle() {
     // Remove existing meta tags and add compliant ones
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Discover financial wellness tips, lifestyle guides, and money management strategies. Professional financial services and lifestyle content.');
+      metaDescription.setAttribute(
+        "content",
+        "Discover financial wellness tips, lifestyle guides, and money management strategies. Professional financial services and lifestyle content.",
+      );
     } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = 'Discover financial wellness tips, lifestyle guides, and money management strategies. Professional financial services and lifestyle content.';
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content =
+        "Discover financial wellness tips, lifestyle guides, and money management strategies. Professional financial services and lifestyle content.";
       document.head.appendChild(meta);
     }
 
     // Add keywords meta tag
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
-      const meta = document.createElement('meta');
-      meta.name = 'keywords';
-      meta.content = 'financial wellness, lifestyle, money management, budgeting, financial planning, investment tips';
+      const meta = document.createElement("meta");
+      meta.name = "keywords";
+      meta.content =
+        "financial wellness, lifestyle, money management, budgeting, financial planning, investment tips";
       document.head.appendChild(meta);
     }
   }, []);
@@ -42,7 +47,8 @@ export default function Lifestyle() {
       title: "10 Financial Habits That Will Transform Your Lifestyle in 2024",
       excerpt:
         "Discover the essential financial practices that successful people use to build wealth and create their dream lifestyle.",
-      image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image:
+        "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600",
       category: "Finance",
       readTime: "5 min read",
       likes: 234,
@@ -54,7 +60,8 @@ export default function Lifestyle() {
         "The Art of Mindful Spending: How to Align Your Purchases with Your Values",
       excerpt:
         "Learn how to make conscious spending decisions that support your lifestyle goals and personal values.",
-      image: "https://images.pexels.com/photos/7414273/pexels-photo-7414273.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image:
+        "https://images.pexels.com/photos/7414273/pexels-photo-7414273.jpeg?auto=compress&cs=tinysrgb&w=600",
       category: "Mindfulness",
       readTime: "7 min read",
       likes: 456,
@@ -65,7 +72,8 @@ export default function Lifestyle() {
       title: "Building Passive Income Streams for Ultimate Lifestyle Freedom",
       excerpt:
         "Explore proven strategies to create multiple income sources that work for you, even while you sleep.",
-      image: "https://images.pexels.com/photos/7534805/pexels-photo-7534805.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image:
+        "https://images.pexels.com/photos/7534805/pexels-photo-7534805.jpeg?auto=compress&cs=tinysrgb&w=600",
       category: "Investment",
       readTime: "10 min read",
       likes: 789,

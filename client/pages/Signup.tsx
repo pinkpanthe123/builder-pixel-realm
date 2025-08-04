@@ -9,18 +9,24 @@ export default function Signup() {
     const addMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"]`);
       if (!meta) {
-        meta = document.createElement('meta');
-        meta.setAttribute('name', name);
+        meta = document.createElement("meta");
+        meta.setAttribute("name", name);
         document.head.appendChild(meta);
       }
-      meta.setAttribute('content', content);
+      meta.setAttribute("content", content);
     };
 
-    addMeta('description', 'Create your secure cashyte.com account for professional financial services. Join our platform for secure banking and money management.');
-    addMeta('keywords', 'sign up, create account, financial services, secure banking, cashyte registration');
-    addMeta('contact', 'mikebhai355@gmail.com');
-    addMeta('phone', '+1-833-251-8091');
-    addMeta('robots', 'index, follow');
+    addMeta(
+      "description",
+      "Create your secure cashyte.com account for professional financial services. Join our platform for secure banking and money management.",
+    );
+    addMeta(
+      "keywords",
+      "sign up, create account, financial services, secure banking, cashyte registration",
+    );
+    addMeta("contact", "mikebhai355@gmail.com");
+    addMeta("phone", "+1-833-251-8091");
+    addMeta("robots", "index, follow");
   }, []);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -29,7 +35,7 @@ export default function Signup() {
     password: "",
     confirmPassword: "",
     phone: "",
-    agreeTerms: false
+    agreeTerms: false,
   });
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -40,9 +46,9 @@ export default function Signup() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
@@ -53,12 +59,18 @@ export default function Signup() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <a href="/" className="text-[#0070ba] hover:text-[#005ea6] font-semibold text-xl">
+              <a
+                href="/"
+                className="text-[#0070ba] hover:text-[#005ea6] font-semibold text-xl"
+              >
                 cashyte.com
               </a>
             </div>
             <div className="hidden sm:flex items-center space-x-6">
-              <a href="/" className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium">
+              <a
+                href="/"
+                className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium"
+              >
                 Already have an account?
               </a>
             </div>
@@ -91,7 +103,8 @@ export default function Signup() {
                     Thank you for your interest in our services.
                   </div>
                   <div className="text-sm text-green-700">
-                    Please contact our support team at +1-833-251-8091 to complete verification.
+                    Please contact our support team at +1-833-251-8091 to
+                    complete verification.
                   </div>
                 </div>
               </div>
@@ -103,7 +116,10 @@ export default function Signup() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="firstName"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     First name
                   </label>
                   <input
@@ -117,7 +133,10 @@ export default function Signup() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="lastName"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Last name
                   </label>
                   <input
@@ -133,7 +152,10 @@ export default function Signup() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Email address
                 </label>
                 <input
@@ -148,7 +170,10 @@ export default function Signup() {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Phone number
                 </label>
                 <input
@@ -163,7 +188,10 @@ export default function Signup() {
               </div>
 
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Password
                 </label>
                 <input
@@ -178,7 +206,10 @@ export default function Signup() {
               </div>
 
               <div>
-                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="confirmPassword"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Confirm password
                 </label>
                 <input
@@ -202,13 +233,22 @@ export default function Signup() {
                   className="mt-1 h-4 w-4 text-[#0070ba] focus:ring-[#0070ba] border-gray-300 rounded"
                   required
                 />
-                <label htmlFor="agreeTerms" className="ml-3 text-sm text-gray-600">
+                <label
+                  htmlFor="agreeTerms"
+                  className="ml-3 text-sm text-gray-600"
+                >
                   I agree to the{" "}
-                  <a href="/terms" className="text-[#0070ba] hover:text-[#005ea6]">
+                  <a
+                    href="/terms"
+                    className="text-[#0070ba] hover:text-[#005ea6]"
+                  >
                     Terms of Service
                   </a>{" "}
                   and{" "}
-                  <a href="/privacy" className="text-[#0070ba] hover:text-[#005ea6]">
+                  <a
+                    href="/privacy"
+                    className="text-[#0070ba] hover:text-[#005ea6]"
+                  >
                     Privacy Policy
                   </a>
                 </label>
@@ -225,7 +265,10 @@ export default function Signup() {
             <div className="mt-6 text-center">
               <p className="text-sm text-gray-600">
                 Already have an account?{" "}
-                <a href="/" className="text-[#0070ba] hover:text-[#005ea6] font-medium">
+                <a
+                  href="/"
+                  className="text-[#0070ba] hover:text-[#005ea6] font-medium"
+                >
                   Log in
                 </a>
               </p>
@@ -256,7 +299,10 @@ export default function Signup() {
             <a href="/" className="hover:text-[#0070ba] transition-colors">
               Home
             </a>
-            <a href="/privacy" className="hover:text-[#0070ba] transition-colors">
+            <a
+              href="/privacy"
+              className="hover:text-[#0070ba] transition-colors"
+            >
               Privacy
             </a>
             <a href="/terms" className="hover:text-[#0070ba] transition-colors">

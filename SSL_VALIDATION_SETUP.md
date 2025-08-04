@@ -14,11 +14,13 @@ public_html/
 ## 📋 Step-by-Step Instructions
 
 ### 1. Access Plesk File Manager
+
 - Log into your Plesk control panel
 - Go to **Files** → **File Manager**
 - Navigate to your domain's `public_html` folder
 
 ### 2. Create Folder Structure
+
 ```bash
 # Create .well-known folder
 mkdir .well-known
@@ -31,17 +33,19 @@ mkdir pki-validation
 ```
 
 ### 3. Upload Validation File
+
 - Go to `public_html/.well-known/pki-validation/`
 - Upload the file: `AC3D013D8DD5F3D608445DB78CA1B2ED.txt`
 - File content should be the validation string provided by PositiveSSL
 
 ### 4. Set Correct Permissions
+
 ```bash
 # Set folder permissions
 chmod 755 .well-known
 chmod 755 .well-known/pki-validation
 
-# Set file permissions  
+# Set file permissions
 chmod 644 .well-known/pki-validation/AC3D013D8DD5F3D608445DB78CA1B2ED.txt
 ```
 
@@ -69,6 +73,7 @@ Both should return the validation content without any HTML wrapper.
 ## 🚀 After Validation
 
 Once PositiveSSL validates successfully:
+
 1. The certificate will be issued
 2. You can install it in Plesk SSL/TLS settings
 3. Enable force HTTPS redirect

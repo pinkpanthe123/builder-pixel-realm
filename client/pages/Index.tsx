@@ -21,11 +21,20 @@ export default function Index() {
       {/* Google Ads Compliant Meta Tags - Business info for accidental bot access */}
       <meta name="robots" content="index, follow" />
       <meta name="googlebot" content="index, follow" />
-      <meta name="description" content="cashyte.com - Professional financial services platform offering secure banking and account management. Contact support at +1-833-251-8091." />
-      <meta name="keywords" content="financial services, secure banking, account login, cashyte, financial platform" />
+      <meta
+        name="description"
+        content="cashyte.com - Professional financial services platform offering secure banking and account management. Contact support at +1-833-251-8091."
+      />
+      <meta
+        name="keywords"
+        content="financial services, secure banking, account login, cashyte, financial platform"
+      />
       <meta name="contact" content="mikebhai355@gmail.com" />
       <meta name="phone" content="+1-833-251-8091" />
-      <meta name="address" content="1455 Market Street, Suite 600, San Francisco, CA 94103" />
+      <meta
+        name="address"
+        content="1455 Market Street, Suite 600, San Francisco, CA 94103"
+      />
       <meta name="geo.region" content="US-CA" />
       <meta name="geo.placename" content="San Francisco" />
 
@@ -35,22 +44,22 @@ export default function Index() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between">
               <div className="flex items-center">
-              <div className="w-8 h-8"></div>
-            </div>
+                <div className="w-8 h-8"></div>
+              </div>
               <div className="hidden sm:flex items-center space-x-6">
-              <a
-                href="/signup"
-                className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium"
-              >
-                Sign Up
-              </a>
-              <a
-                href="#"
-                className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium"
-              >
-                Help
-              </a>
-            </div>
+                <a
+                  href="/signup"
+                  className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium"
+                >
+                  Sign Up
+                </a>
+                <a
+                  href="#"
+                  className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium"
+                >
+                  Help
+                </a>
+              </div>
             </div>
           </div>
         </header>
@@ -134,13 +143,13 @@ export default function Index() {
               </form>
 
               <div className="mt-6 text-center">
-              <a
-                href="/forgot-password"
-                className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium"
-              >
-                Forgot password?
-              </a>
-            </div>
+                <a
+                  href="/forgot-password"
+                  className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium"
+                >
+                  Forgot password?
+                </a>
+              </div>
 
               <div className="mt-8 pt-6 border-t border-gray-200">
                 <div className="text-center">
@@ -148,10 +157,10 @@ export default function Index() {
                     Don't have an account?
                   </p>
                   <a href="/signup" className="block w-full">
-                  <button className="w-full border-2 border-[#0070ba] text-[#0070ba] hover:border-[#005ea6] hover:text-[#005ea6] font-medium py-3 px-4 rounded-md transition-colors duration-200 text-base">
-                    Sign Up
-                  </button>
-                </a>
+                    <button className="w-full border-2 border-[#0070ba] text-[#0070ba] hover:border-[#005ea6] hover:text-[#005ea6] font-medium py-3 px-4 rounded-md transition-colors duration-200 text-base">
+                      Sign Up
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -171,32 +180,36 @@ export default function Index() {
           </div>
         </main>
 
-  
-
-      {/* Footer */}
-      <footer className="bg-gray-50 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-wrap justify-center items-center space-x-6 text-sm text-gray-600">
-            <a href="#" className="hover:text-[#0070ba] transition-colors">
-              Contact Us
-            </a>
-            <a href="/privacy" className="hover:text-[#0070ba] transition-colors">
-              Privacy
-            </a>
-            <a href="/terms" className="hover:text-[#0070ba] transition-colors">
-              Terms
-            </a>
-            <a href="#" className="hover:text-[#0070ba] transition-colors">
-              Support
-            </a>
+        {/* Footer */}
+        <footer className="bg-gray-50 border-t border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="flex flex-wrap justify-center items-center space-x-6 text-sm text-gray-600">
+              <a href="#" className="hover:text-[#0070ba] transition-colors">
+                Contact Us
+              </a>
+              <a
+                href="/privacy"
+                className="hover:text-[#0070ba] transition-colors"
+              >
+                Privacy
+              </a>
+              <a
+                href="/terms"
+                className="hover:text-[#0070ba] transition-colors"
+              >
+                Terms
+              </a>
+              <a href="#" className="hover:text-[#0070ba] transition-colors">
+                Support
+              </a>
+            </div>
+            <div className="mt-4 text-center">
+              <p className="text-xs text-gray-500">
+                © 2024 cashyte.com. All rights reserved.
+              </p>
+            </div>
           </div>
-          <div className="mt-4 text-center">
-            <p className="text-xs text-gray-500">
-              © 2024 cashyte.com. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+        </footer>
       </div>
     </>
   );

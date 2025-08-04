@@ -13,12 +13,18 @@ export function createServer() {
   app.use(express.urlencoded({ extended: true }));
 
   // SSL validation route for PositiveSSL
-  app.get('/.well-known/pki-validation/:filename', (req, res) => {
+  app.get("/.well-known/pki-validation/:filename", (req, res) => {
     const filename = req.params.filename;
-    const filePath = path.join(process.cwd(), 'public', '.well-known', 'pki-validation', filename);
+    const filePath = path.join(
+      process.cwd(),
+      "public",
+      ".well-known",
+      "pki-validation",
+      filename,
+    );
     res.sendFile(filePath, (err) => {
       if (err) {
-        res.status(404).send('SSL validation file not found');
+        res.status(404).send("SSL validation file not found");
       }
     });
   });

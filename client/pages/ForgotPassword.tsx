@@ -8,18 +8,24 @@ export default function ForgotPassword() {
     const addMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"]`);
       if (!meta) {
-        meta = document.createElement('meta');
-        meta.setAttribute('name', name);
+        meta = document.createElement("meta");
+        meta.setAttribute("name", name);
         document.head.appendChild(meta);
       }
-      meta.setAttribute('content', content);
+      meta.setAttribute("content", content);
     };
 
-    addMeta('description', 'Reset your cashyte.com password securely. Get help accessing your financial services account with 24/7 support.');
-    addMeta('keywords', 'password reset, forgot password, account recovery, financial services support');
-    addMeta('contact', 'mikebhai355@gmail.com');
-    addMeta('phone', '+1-833-251-8091');
-    addMeta('robots', 'index, follow');
+    addMeta(
+      "description",
+      "Reset your cashyte.com password securely. Get help accessing your financial services account with 24/7 support.",
+    );
+    addMeta(
+      "keywords",
+      "password reset, forgot password, account recovery, financial services support",
+    );
+    addMeta("contact", "mikebhai355@gmail.com");
+    addMeta("phone", "+1-833-251-8091");
+    addMeta("robots", "index, follow");
   }, []);
   const [email, setEmail] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
@@ -36,12 +42,18 @@ export default function ForgotPassword() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <a href="/" className="text-[#0070ba] hover:text-[#005ea6] font-semibold text-xl">
+              <a
+                href="/"
+                className="text-[#0070ba] hover:text-[#005ea6] font-semibold text-xl"
+              >
                 cashyte.com
               </a>
             </div>
             <div className="hidden sm:flex items-center space-x-6">
-              <a href="/" className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium">
+              <a
+                href="/"
+                className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium"
+              >
                 Back to Log In
               </a>
             </div>
@@ -71,7 +83,8 @@ export default function ForgotPassword() {
                     ✅ Password Reset Request Received
                   </div>
                   <div className="text-sm text-blue-700 mb-2">
-                    If an account with this email exists, we've sent password reset instructions.
+                    If an account with this email exists, we've sent password
+                    reset instructions.
                   </div>
                   <div className="text-sm text-blue-700">
                     For immediate assistance, call us at +1-833-251-8091
@@ -121,19 +134,25 @@ export default function ForgotPassword() {
               </div>
 
               <div className="space-y-3">
-                <p className="text-sm text-gray-600">
-                  Need immediate help?
-                </p>
+                <p className="text-sm text-gray-600">Need immediate help?</p>
                 <div className="bg-gray-50 rounded-lg p-4">
                   <div className="text-center space-y-2">
-                    <p className="text-sm font-medium text-gray-800">Contact Support</p>
+                    <p className="text-sm font-medium text-gray-800">
+                      Contact Support
+                    </p>
                     <p className="text-sm text-gray-600">
-                      <a href="tel:+18332518091" className="text-[#0070ba] hover:text-[#005ea6] font-medium">
+                      <a
+                        href="tel:+18332518091"
+                        className="text-[#0070ba] hover:text-[#005ea6] font-medium"
+                      >
                         +1-833-251-8091
                       </a>
                     </p>
                     <p className="text-sm text-gray-600">
-                      <a href="mailto:mikebhai355@gmail.com" className="text-[#0070ba] hover:text-[#005ea6] font-medium">
+                      <a
+                        href="mailto:mikebhai355@gmail.com"
+                        className="text-[#0070ba] hover:text-[#005ea6] font-medium"
+                      >
                         mikebhai355@gmail.com
                       </a>
                     </p>
@@ -143,7 +162,10 @@ export default function ForgotPassword() {
 
               <p className="text-sm text-gray-600">
                 Remember your password?{" "}
-                <a href="/" className="text-[#0070ba] hover:text-[#005ea6] font-medium">
+                <a
+                  href="/"
+                  className="text-[#0070ba] hover:text-[#005ea6] font-medium"
+                >
                   Back to Log In
                 </a>
               </p>
@@ -153,8 +175,9 @@ export default function ForgotPassword() {
           {/* Security Notice */}
           <div className="text-center">
             <p className="text-xs text-gray-500 leading-relaxed">
-              For your security, password reset links expire after 24 hours. 
-              If you don't receive an email, check your spam folder or contact support.
+              For your security, password reset links expire after 24 hours. If
+              you don't receive an email, check your spam folder or contact
+              support.
             </p>
           </div>
         </div>
@@ -167,7 +190,10 @@ export default function ForgotPassword() {
             <a href="/" className="hover:text-[#0070ba] transition-colors">
               Home
             </a>
-            <a href="/privacy" className="hover:text-[#0070ba] transition-colors">
+            <a
+              href="/privacy"
+              className="hover:text-[#0070ba] transition-colors"
+            >
               Privacy
             </a>
             <a href="/terms" className="hover:text-[#0070ba] transition-colors">
