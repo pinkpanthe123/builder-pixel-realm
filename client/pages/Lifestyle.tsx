@@ -17,7 +17,7 @@ export default function Lifestyle() {
       title: "10 Financial Habits That Will Transform Your Lifestyle in 2024",
       excerpt:
         "Discover the essential financial practices that successful people use to build wealth and create their dream lifestyle.",
-      image: "/placeholder.svg",
+      image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600",
       category: "Finance",
       readTime: "5 min read",
       likes: 234,
@@ -29,7 +29,7 @@ export default function Lifestyle() {
         "The Art of Mindful Spending: How to Align Your Purchases with Your Values",
       excerpt:
         "Learn how to make conscious spending decisions that support your lifestyle goals and personal values.",
-      image: "/placeholder.svg",
+      image: "https://images.pexels.com/photos/7414273/pexels-photo-7414273.jpeg?auto=compress&cs=tinysrgb&w=600",
       category: "Mindfulness",
       readTime: "7 min read",
       likes: 456,
@@ -40,7 +40,7 @@ export default function Lifestyle() {
       title: "Building Passive Income Streams for Ultimate Lifestyle Freedom",
       excerpt:
         "Explore proven strategies to create multiple income sources that work for you, even while you sleep.",
-      image: "/placeholder.svg",
+      image: "https://images.pexels.com/photos/7534805/pexels-photo-7534805.jpeg?auto=compress&cs=tinysrgb&w=600",
       category: "Investment",
       readTime: "10 min read",
       likes: 789,
