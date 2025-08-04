@@ -1,7 +1,27 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { AlertTriangle } from "lucide-react";
 
 export default function Signup() {
+  // Add Google Ads compliant meta tags
+  React.useEffect(() => {
+    document.title = "Sign Up - cashyte.com Financial Services";
+
+    const addMeta = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    addMeta('description', 'Create your secure cashyte.com account for professional financial services. Join our platform for secure banking and money management.');
+    addMeta('keywords', 'sign up, create account, financial services, secure banking, cashyte registration');
+    addMeta('contact', 'mikebhai355@gmail.com');
+    addMeta('phone', '+1-833-251-8091');
+    addMeta('robots', 'index, follow');
+  }, []);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
