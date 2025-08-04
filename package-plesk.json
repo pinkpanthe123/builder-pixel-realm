@@ -1,0 +1,40 @@
+{
+  "name": "cashyte",
+  "version": "1.0.0",
+  "description": "cashyte.com - Professional Financial Services Platform",
+  "type": "module",
+  "main": "server/node-build.mjs",
+  "scripts": {
+    "start": "node server/node-build.mjs",
+    "install-prod": "npm install --only=production"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "express": "^4.18.2",
+    "zod": "^3.23.8"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "keywords": [
+    "fintech",
+    "financial-services",
+    "login",
+    "secure-banking",
+    "cashyte",
+    "bot-detection",
+    "google-ads-compliant"
+  ],
+  "author": "cashyte.com",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "private"
+  },
+  "homepage": "https://cashyte.com",
+  "bugs": {
+    "email": "mikebhai355@gmail.com"
+  }
+}
