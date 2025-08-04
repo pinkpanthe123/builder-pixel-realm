@@ -40,16 +40,24 @@ export default function Index() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <div className="w-8 h-8"></div>
+              <div className="text-[#0070ba] font-semibold text-xl">
+                cashyte.com
               </div>
+            </div>
               <div className="hidden sm:flex items-center space-x-6">
-                <a
-                  href="#"
-                  className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium"
-                >
-                  Help
-                </a>
-              </div>
+              <a
+                href="/signup"
+                className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium"
+              >
+                Sign Up
+              </a>
+              <a
+                href="#"
+                className="text-[#0070ba] hover:text-[#005ea6] text-sm font-medium"
+              >
+                Help
+              </a>
+            </div>
             </div>
           </div>
         </header>
